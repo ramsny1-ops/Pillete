@@ -263,10 +263,6 @@
         border-radius: 2rem;
       }
 
-      .contrast-aaa { background: #2ecc71; color: #000; }
-      .contrast-aa { background: #f39c12; color: #000; }
-      .contrast-fail { background: #e74c3c; color: #fff; }
-
       .x9c8v7b6-n5m4-k3j2-h1g2-f3d4s5a6w7q8 {
         padding: 1.5rem;
         margin: 1.5rem 0;
@@ -310,7 +306,7 @@
         margin-top: 0.8rem;
       }
 
-      .k9j8h7g6-f5d4-s3a2-z1x2-c3v4b5n6m7k8 {
+      .history-chip-uuid {
         width: 60px;
         height: 60px;
         border-radius: 1rem;
@@ -319,7 +315,7 @@
         transition: 0.1s;
       }
 
-      .k9j8h7g6-f5d4-s3a2-z1x2-c3v4b5n6m7k8:hover {
+      .history-chip-uuid:hover {
         transform: scale(1.05);
         border-color: white;
       }
@@ -331,6 +327,21 @@
         border-top: 1px solid rgba(255,255,255,0.06);
         font-size: 0.7rem;
         color: #7e8aa2;
+      }
+
+      .contrast-aaa-uuid {
+        background: #2ecc71;
+        color: #000;
+      }
+
+      .contrast-aa-uuid {
+        background: #f39c12;
+        color: #000;
+      }
+
+      .contrast-fail-uuid {
+        background: #e74c3c;
+        color: #fff;
       }
     }
 
@@ -371,11 +382,11 @@
     <div class="l1k2j3h4-g5f6-d7s8-a9z0-x1c2v3b4n5m6 f47ac10b-58cc-4372-a567-0e02b2c3d479">
       <div class="b8v7c6x5-z4a3-s2d1-f3g4-h5j6k7l8z9x0">
         <label class="m2n3b4v5-c6x7-z8a9-s1d2-f3g4h5j6k7l8">Base color</label>
-        <input type="color" id="baseColor" class="q9w8e7r6-t5y4-u3i2-o1p0-a2s3d4f5g6h7" value="#3b82f6">
+        <input type="color" id="uuid-base-color" class="q9w8e7r6-t5y4-u3i2-o1p0-a2s3d4f5g6h7" value="#3b82f6">
       </div>
       <div class="b8v7c6x5-z4a3-s2d1-f3g4-h5j6k7l8z9x0">
         <label class="m2n3b4v5-c6x7-z8a9-s1d2-f3g4h5j6k7l8">Harmony mode</label>
-        <select id="harmonySelect" class="z1x2c3v4-b5n6-m7k8-j9h0-g1f2d3s4a5w6">
+        <select id="uuid-harmony-select" class="z1x2c3v4-b5n6-m7k8-j9h0-g1f2d3s4a5w6">
           <option value="complementary">Complementary</option>
           <option value="analogous">Analogous (6 tones)</option>
           <option value="triadic">Triadic expanded</option>
@@ -384,37 +395,37 @@
           <option value="split-complementary">Split complementary</option>
         </select>
       </div>
-      <button id="generateBtn" class="c5v6b7n8-m9k0-l1j2-h3g4-f5d6s7a8w9q0">Generate palette</button>
-      <button id="randomBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">Random seed</button>
+      <button id="uuid-generate-btn" class="c5v6b7n8-m9k0-l1j2-h3g4-f5d6s7a8w9q0">Generate palette</button>
+      <button id="uuid-random-btn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">Random seed</button>
       <div class="a9s8d7f6-g5h4-j3k2-l1z2-x3c4v5b6n7m8">
-        <button id="exportCssBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">CSS vars</button>
-        <button id="exportScssBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">SCSS map</button>
-        <button id="exportJsonBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">JSON</button>
-        <button id="copyAllBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">Copy all</button>
+        <button id="uuid-export-css" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">CSS vars</button>
+        <button id="uuid-export-scss" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">SCSS map</button>
+        <button id="uuid-export-json" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">JSON</button>
+        <button id="uuid-copy-all" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">Copy all</button>
       </div>
     </div>
 
-    <div id="gradientPreview" class="p0o9i8u7-y6t5-r4e3-w2q1-a2s3d4f5g6h7 f47ac10b-58cc-4372-a567-0e02b2c3d479"></div>
+    <div id="uuid-gradient-preview" class="p0o9i8u7-y6t5-r4e3-w2q1-a2s3d4f5g6h7 f47ac10b-58cc-4372-a567-0e02b2c3d479"></div>
 
     <div class="z3x4c5v6-b7n8-m9k0-l1j2-h3g4-f5d6s7a8">
       <div class="q1w2e3r4-t5y6-u7i8-o9p0-a1s2d3f4g5h6">6‑color palette</div>
       <span style="font-size:0.7rem;">click to copy · lock preserves color</span>
     </div>
-    <div id="paletteGrid" class="l9k8j7h6-g5f4-d3s2-a1z2-x3c4v5b6n7m8"></div>
+    <div id="uuid-palette-grid" class="l9k8j7h6-g5f4-d3s2-a1z2-x3c4v5b6n7m8"></div>
 
     <div class="x9c8v7b6-n5m4-k3j2-h1g2-f3d4s5a6w7q8 f47ac10b-58cc-4372-a567-0e02b2c3d479">
       <div class="z3x4c5v6-b7n8-m9k0-l1j2-h3g4-f5d6s7a8" style="margin-bottom: 0;">
         <div class="q1w2e3r4-t5y6-u7i8-o9p0-a1s2d3f4g5h6">Intelligent color pairs</div>
         <span style="font-size:0.7rem;">optimized contrast</span>
       </div>
-      <div id="pairsGrid" class="z1x2c3v4-b5n6-m7k8-j9h0-g1f2d3s4a5w6"></div>
+      <div id="uuid-pairs-grid" class="z1x2c3v4-b5n6-m7k8-j9h0-g1f2d3s4a5w6"></div>
     </div>
 
     <div class="z3x4c5v6-b7n8-m9k0-l1j2-h3g4-f5d6s7a8">
       <div class="q1w2e3r4-t5y6-u7i8-o9p0-a1s2d3f4g5h6">History</div>
-      <button id="clearHistoryBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0" style="background: rgba(231,76,60,0.6);">Clear history</button>
+      <button id="uuid-clear-history" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0" style="background: rgba(231,76,60,0.6);">Clear history</button>
     </div>
-    <div id="historyContainer" class="w3e4r5t6-y7u8-i9o0-p1a2-s3d4f5g6h7j8"></div>
+    <div id="uuid-history-container" class="w3e4r5t6-y7u8-i9o0-p1a2-s3d4f5g6h7j8"></div>
 
     <div class="u8i9o0p1-a2s3-d4f5-g6h7-j8k9l0z1x2c3">
       <span>Color system · WCAG ready · zero dependencies · author: ramsny1-ops</span>
@@ -694,8 +705,8 @@
      * @returns {string[]} Final palette respecting locks
      */
     const ___getFullPaletteWithLocks = () => {
-      const ___base = document.getElementById('baseColor').value;
-      const ___mode = document.getElementById('harmonySelect').value;
+      const ___base = document.getElementById('uuid-base-color').value;
+      const ___mode = document.getElementById('uuid-harmony-select').value;
       const ___fresh = ___generateSixColors(___base, ___mode);
       const ___final = [...___fresh];
       for (let ___i = 0; ___i < 6; ___i++) {
@@ -717,9 +728,9 @@
       const ___ratioBlack = ___contrastRatio(___hex, '#000000');
       const ___bestRatio = parseFloat(___ratioWhite) > parseFloat(___ratioBlack) ? ___ratioWhite : ___ratioBlack;
       const ___grade = ___wcagGrade(___bestRatio);
-      let ___gradeClass = 'contrast-fail';
-      if (___grade === 'AAA') ___gradeClass = 'contrast-aaa';
-      else if (___grade === 'AA') ___gradeClass = 'contrast-aa';
+      let ___gradeClass = 'contrast-fail-uuid';
+      if (___grade === 'AAA') ___gradeClass = 'contrast-aaa-uuid';
+      else if (___grade === 'AA') ___gradeClass = 'contrast-aa-uuid';
       
       const ___card = document.createElement('div');
       ___card.className = 'b2n3m4v5-c6x7-z8a9-s1d2-f3g4h5j6k7l8';
@@ -751,7 +762,7 @@
      * @returns {void}
      */
     const ___renderPalette = (___colors) => {
-      const ___grid = document.getElementById('paletteGrid');
+      const ___grid = document.getElementById('uuid-palette-grid');
       ___grid.innerHTML = '';
       ___colors.forEach((___c, ___idx) => ___grid.appendChild(___createColorCard(___c, ___idx)));
       ___currentPalette = [...___colors];
@@ -766,7 +777,7 @@
      * @returns {void}
      */
     const ___updateGradientPreview = (___colors) => {
-      const ___gradDiv = document.getElementById('gradientPreview');
+      const ___gradDiv = document.getElementById('uuid-gradient-preview');
       const ___gradientStr = `linear-gradient(90deg, ${___colors.join(', ')})`;
       ___gradDiv.style.background = ___gradientStr;
       ___gradDiv.onclick = () => {
@@ -793,14 +804,14 @@
      * @returns {void}
      */
     const ___renderHistory = () => {
-      const ___histDiv = document.getElementById('historyContainer');
+      const ___histDiv = document.getElementById('uuid-history-container');
       ___histDiv.innerHTML = '';
       ___paletteHistory.forEach(___hex => {
         const ___chip = document.createElement('div');
-        ___chip.className = 'k9j8h7g6-f5d4-s3a2-z1x2-c3v4b5n6m7k8';
+        ___chip.className = 'history-chip-uuid';
         ___chip.style.backgroundColor = ___hex;
         ___chip.addEventListener('click', () => {
-          document.getElementById('baseColor').value = ___hex;
+          document.getElementById('uuid-base-color').value = ___hex;
           ___generateFullPalette();
         });
         ___histDiv.appendChild(___chip);
@@ -844,7 +855,7 @@
      * @returns {void}
      */
     const ___renderPairs = (___pairs) => {
-      const ___container = document.getElementById('pairsGrid');
+      const ___container = document.getElementById('uuid-pairs-grid');
       ___container.innerHTML = '';
       ___pairs.forEach(___pair => {
         const ___div = document.createElement('div');
@@ -878,7 +889,7 @@
      */
     const ___randomPalette = () => {
       const ___rand = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
-      document.getElementById('baseColor').value = ___rand;
+      document.getElementById('uuid-base-color').value = ___rand;
       ___generateFullPalette();
     };
 
@@ -927,7 +938,7 @@
     const ___exportJSON = () => {
       const ___data = {
         palette: ___currentPalette,
-        harmony: document.getElementById('harmonySelect').value,
+        harmony: document.getElementById('uuid-harmony-select').value,
         locked: ___lockedStates,
         generated: new Date().toISOString()
       };
@@ -956,13 +967,13 @@
      * @returns {void}
      */
     const ___bindEvents = () => {
-      document.getElementById('generateBtn').addEventListener('click', ___generateFullPalette);
-      document.getElementById('randomBtn').addEventListener('click', ___randomPalette);
-      document.getElementById('exportCssBtn').addEventListener('click', ___exportCSS);
-      document.getElementById('exportScssBtn').addEventListener('click', ___exportSCSS);
-      document.getElementById('exportJsonBtn').addEventListener('click', ___exportJSON);
-      document.getElementById('copyAllBtn').addEventListener('click', ___copyAllHex);
-      document.getElementById('clearHistoryBtn').addEventListener('click', ___clearHistory);
+      document.getElementById('uuid-generate-btn').addEventListener('click', ___generateFullPalette);
+      document.getElementById('uuid-random-btn').addEventListener('click', ___randomPalette);
+      document.getElementById('uuid-export-css').addEventListener('click', ___exportCSS);
+      document.getElementById('uuid-export-scss').addEventListener('click', ___exportSCSS);
+      document.getElementById('uuid-export-json').addEventListener('click', ___exportJSON);
+      document.getElementById('uuid-copy-all').addEventListener('click', ___copyAllHex);
+      document.getElementById('uuid-clear-history').addEventListener('click', ___clearHistory);
     };
 
     /**
@@ -977,4 +988,4 @@
     ___init();
   </script>
 </body>
-                                                                                                                  </html>
+  </html>
