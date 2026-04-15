@@ -3,325 +3,379 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Palette Atelier | Professional Color System</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <title>Palette Core | Professional Color System</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    @layer reset, components, utilities;
+
+    @layer reset {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at 15% 25%, #0b0f1c, #020408);
+        min-height: 100vh;
+        color: #edf2ff;
+        line-height: 1.5;
+      }
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 15% 25%, #0b0f1c, #03060b);
-      min-height: 100vh;
-      color: #edf2ff;
-      line-height: 1.5;
+    @layer components {
+      :root {
+        --glass-bg: rgba(18, 24, 36, 0.58);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --accent: #3b82f6;
+        --accent-hover: #4f8eff;
+        --success: #2ecc71;
+        --warning: #f39c12;
+        --danger: #e74c3c;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --glass-bg: rgba(245, 248, 255, 0.75);
+          --glass-border: rgba(0, 0, 0, 0.06);
+        }
+      }
+
+      .f47ac10b-58cc-4372-a567-0e02b2c3d479 {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        border-radius: 28px;
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
+      }
+
+      .e3b0c442-98fc-1c14-9e5b-8b9e3a5e4b2a {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem 1.8rem;
+      }
+
+      @media (max-width: 680px) {
+        .e3b0c442-98fc-1c14-9e5b-8b9e3a5e4b2a {
+          padding: 1rem;
+        }
+      }
+
+      .a1b2c3d4-e5f6-4789-ab12-cd34ef56gh78 {
+        margin-bottom: 2.5rem;
+      }
+
+      .p9o8i7u6-y5t4-r3e2-w1q2-a3s4d5f6g7h8 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        background: linear-gradient(125deg, #ffffff, #8ba3ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 1rem;
+      }
+
+      .z9x8c7v6-b5n4-m3k2-j1h2-g3f4d5s6a7w8 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, #ffffff, #a5b9ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 0.75rem;
+      }
+
+      @media (max-width: 680px) {
+        .z9x8c7v6-b5n4-m3k2-j1h2-g3f4d5s6a7w8 {
+          font-size: 2rem;
+        }
+      }
+
+      .q1w2e3r4-t5y6-u7i8-o9p0-a1s2d3f4g5h6 {
+        font-size: 1rem;
+        color: #b9c7e0;
+        max-width: 560px;
+      }
+
+      .l1k2j3h4-g5f6-d7s8-a9z0-x1c2v3b4n5m6 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        padding: 1.5rem 1.8rem;
+        margin-bottom: 2.2rem;
+      }
+
+      .b8v7c6x5-z4a3-s2d1-f3g4-h5j6k7l8z9x0 {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .m2n3b4v5-c6x7-z8a9-s1d2-f3g4h5j6k7l8 {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #b9c7e0;
+      }
+
+      .q9w8e7r6-t5y4-u3i2-o1p0-a2s3d4f5g6h7 {
+        width: 100%;
+        height: 52px;
+        border-radius: 18px;
+        border: 1px solid rgba(255,255,255,0.25);
+        background: rgba(0,0,0,0.35);
+        cursor: pointer;
+      }
+
+      .z1x2c3v4-b5n6-m7k8-j9h0-g1f2d3s4a5w6,
+      .c5v6b7n8-m9k0-l1j2-h3g4-f5d6s7a8w9q0 {
+        padding: 0.7rem 1rem;
+        border-radius: 40px;
+        font-weight: 600;
+        font-family: 'Inter', monospace;
+        border: none;
+        background: rgba(30, 38, 52, 0.85);
+        backdrop-filter: blur(4px);
+        color: white;
+        border: 1px solid rgba(255,255,255,0.15);
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .c5v6b7n8-m9k0-l1j2-h3g4-f5d6s7a8w9q0 {
+        background: rgba(55, 95, 230, 0.85);
+      }
+
+      .c5v6b7n8-m9k0-l1j2-h3g4-f5d6s7a8w9q0:hover {
+        background: rgba(75, 115, 250, 0.98);
+        transform: translateY(-1px);
+      }
+
+      .e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0 {
+        background: rgba(255,255,255,0.08);
+      }
+
+      .e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0:hover {
+        background: rgba(255,255,255,0.2);
+      }
+
+      .a9s8d7f6-g5h4-j3k2-l1z2-x3c4v5b6n7m8 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        align-items: center;
+      }
+
+      .p0o9i8u7-y6t5-r4e3-w2q1-a2s3d4f5g6h7 {
+        margin-bottom: 2rem;
+        border-radius: 1.5rem;
+        height: 70px;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      .z3x4c5v6-b7n8-m9k0-l1j2-h3g4-f5d6s7a8 {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        margin: 1rem 0 1rem 0;
+      }
+
+      .q1w2e3r4-t5y6-u7i8-o9p0-a1s2d3f4g5h6 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: -0.2px;
+      }
+
+      .l9k8j7h6-g5f4-d3s2-a1z2-x3c4v5b6n7m8 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 680px) {
+        .l9k8j7h6-g5f4-d3s2-a1z2-x3c4v5b6n7m8 {
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
+      }
+
+      .b2n3m4v5-c6x7-z8a9-s1d2-f3g4h5j6k7l8 {
+        border-radius: 1.6rem;
+        padding: 1rem 0.8rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255,255,255,0.1);
+        position: relative;
+      }
+
+      .b2n3m4v5-c6x7-z8a9-s1d2-f3g4h5j6k7l8:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255,255,255,0.4);
+      }
+
+      .k9j8h7g6-f5d4-s3a2-z1x2-c3v4b5n6m7k8 {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        background: rgba(0,0,0,0.5);
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        backdrop-filter: blur(4px);
+      }
+
+      .j4h5g6f7-d8s9-a0z1-x2c3-v4b5n6m7k8l9 {
+        font-family: monospace;
+        font-weight: 700;
+        font-size: 0.9rem;
+        background: rgba(0,0,0,0.45);
+        display: inline-block;
+        padding: 0.25rem 0.8rem;
+        border-radius: 2rem;
+        margin-top: 0.8rem;
+      }
+
+      .m9n8b7v6-c5x4-z3a2-s1d2-f3g4h5j6k7l8 {
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-top: 0.6rem;
+        opacity: 0.85;
+      }
+
+      .q2w3e4r5-t6y7-u8i9-o0p1-a2s3d4f5g6h7 {
+        display: inline-block;
+        font-size: 0.65rem;
+        font-weight: 700;
+        margin-top: 0.6rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 2rem;
+      }
+
+      .contrast-aaa { background: #2ecc71; color: #000; }
+      .contrast-aa { background: #f39c12; color: #000; }
+      .contrast-fail { background: #e74c3c; color: #fff; }
+
+      .x9c8v7b6-n5m4-k3j2-h1g2-f3d4s5a6w7q8 {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .z1x2c3v4-b5n6-m7k8-j9h0-g1f2d3s4a5w6 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.2rem;
+        margin-top: 1rem;
+      }
+
+      .l2k3j4h5-g6f7-d8s9-a0z1-x2c3v4b5n6m7 {
+        display: flex;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid rgba(255,255,255,0.2);
+        background: rgba(0,0,0,0.25);
+        transition: 0.15s;
+      }
+
+      .l2k3j4h5-g6f7-d8s9-a0z1-x2c3v4b5n6m7:hover {
+        transform: scale(1.01);
+        border-color: rgba(255,255,255,0.5);
+      }
+
+      .c8v7b6n5-m4k3-j2h1-g2f3-d4s5a6w7q8e9 {
+        flex: 1;
+        padding: 1.2rem 0.5rem;
+        text-align: center;
+        font-weight: 700;
+        font-family: monospace;
+        font-size: 0.85rem;
+      }
+
+      .w3e4r5t6-y7u8-i9o0-p1a2-s3d4f5g6h7j8 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 0.8rem;
+      }
+
+      .k9j8h7g6-f5d4-s3a2-z1x2-c3v4b5n6m7k8 {
+        width: 60px;
+        height: 60px;
+        border-radius: 1rem;
+        border: 2px solid rgba(255,255,255,0.3);
+        cursor: pointer;
+        transition: 0.1s;
+      }
+
+      .k9j8h7g6-f5d4-s3a2-z1x2-c3v4b5n6m7k8:hover {
+        transform: scale(1.05);
+        border-color: white;
+      }
+
+      .u8i9o0p1-a2s3-d4f5-g6h7-j8k9l0z1x2c3 {
+        margin-top: 3rem;
+        padding: 1.5rem 0;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        font-size: 0.7rem;
+        color: #7e8aa2;
+      }
     }
 
-    /* refined glass panel */
-    .glass-panel {
-      background: rgba(18, 24, 36, 0.58);
-      backdrop-filter: blur(16px);
-      border-radius: 28px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
-    }
+    @layer utilities {
+      .toast-global {
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0a0f1cee;
+        backdrop-filter: blur(20px);
+        padding: 0.6rem 1.5rem;
+        border-radius: 40px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        z-index: 2000;
+        pointer-events: none;
+        border: 1px solid rgba(255,255,255,0.2);
+        animation: fadeOut 2s ease forwards;
+      }
 
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 2rem 1.8rem;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-      gap: 1rem;
-    }
-
-    h1 {
-      font-weight: 620;
-      font-size: 1.9rem;
-      letter-spacing: -0.02em;
-      background: linear-gradient(125deg, #ffffff, #9bb6ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .badge {
-      font-size: 0.7rem;
-      font-weight: 500;
-      background: rgba(255,255,255,0.08);
-      padding: 0.2rem 0.9rem;
-      border-radius: 40px;
-    }
-
-    .theme-switch {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 0.45rem 1.2rem;
-      border-radius: 40px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: 0.2s;
-      color: white;
-    }
-
-    .theme-switch:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-    .control-bar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.2rem;
-      padding: 1.5rem 1.8rem;
-      margin-bottom: 2.2rem;
-    }
-
-    .control-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
-      color: #b9c7e0;
-    }
-
-    input[type="color"] {
-      width: 100%;
-      height: 52px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: rgba(0,0,0,0.35);
-      cursor: pointer;
-    }
-
-    select, button {
-      padding: 0.7rem 1rem;
-      border-radius: 40px;
-      font-weight: 600;
-      font-family: 'Inter', monospace;
-      border: none;
-      background: rgba(30, 38, 52, 0.85);
-      backdrop-filter: blur(4px);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.15);
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    select {
-      background: rgba(18, 24, 34, 0.9);
-    }
-
-    button {
-      background: rgba(55, 95, 230, 0.85);
-    }
-
-    button:hover {
-      background: rgba(75, 115, 250, 0.98);
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-    .export-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
-    }
-
-    .section-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      letter-spacing: -0.2px;
-      margin-bottom: 1.2rem;
-    }
-
-    .palette-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .color-card {
-      border-radius: 1.6rem;
-      padding: 1rem 0.8rem 1rem 0.8rem;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      background: rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .color-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.4);
-    }
-
-    .color-hex {
-      font-family: 'SF Mono', monospace;
-      font-weight: 700;
-      font-size: 0.9rem;
-      background: rgba(0,0,0,0.45);
-      display: inline-block;
-      padding: 0.25rem 0.8rem;
-      border-radius: 2rem;
-      margin-top: 0.8rem;
-    }
-
-    .color-name {
-      font-size: 0.75rem;
-      font-weight: 500;
-      margin-top: 0.6rem;
-      opacity: 0.85;
-    }
-
-    .contrast-badge {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 700;
-      margin-top: 0.6rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 2rem;
-    }
-
-    .contrast-aaa { background: #2ecc71; color: #000; }
-    .contrast-aa { background: #f39c12; color: #000; }
-    .contrast-fail { background: #e74c3c; color: #fff; }
-
-    .pairs-section {
-      padding: 1.5rem;
-      margin: 1.8rem 0 2rem;
-    }
-
-    .pairs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1rem;
-    }
-
-    .pair-card {
-      display: flex;
-      border-radius: 1.2rem;
-      overflow: hidden;
-      cursor: pointer;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(0,0,0,0.25);
-      transition: 0.15s;
-    }
-
-    .pair-card:hover {
-      transform: scale(1.01);
-      border-color: rgba(255,255,255,0.5);
-    }
-
-    .pair-half {
-      flex: 1;
-      padding: 1.2rem 0.5rem;
-      text-align: center;
-      font-weight: 700;
-      font-family: monospace;
-      font-size: 0.85rem;
-    }
-
-    .history-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 0.8rem;
-    }
-
-    .history-chip {
-      width: 60px;
-      height: 60px;
-      border-radius: 1rem;
-      border: 2px solid rgba(255,255,255,0.3);
-      cursor: pointer;
-      transition: 0.1s;
-    }
-
-    .history-chip:hover {
-      transform: scale(1.05);
-      border-color: white;
-    }
-
-    .toast {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0a0f1cee;
-      backdrop-filter: blur(20px);
-      padding: 0.6rem 1.5rem;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      z-index: 2000;
-      pointer-events: none;
-      border: 1px solid rgba(255,255,255,0.2);
-      animation: fadeOut 2s ease forwards;
-    }
-
-    @keyframes fadeOut {
-      0% { opacity: 1; }
-      70% { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
-    }
-
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      font-size: 0.7rem;
-      opacity: 0.5;
-    }
-
-    @media (max-width: 680px) {
-      .container { padding: 1rem; }
-      .palette-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+      @keyframes fadeOut {
+        0% { opacity: 1; }
+        70% { opacity: 1; }
+        100% { opacity: 0; visibility: hidden; }
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div style="display: flex; align-items: baseline; gap: 0.8rem;">
-        <h1>Palette Atelier</h1>
-        <span class="badge">chromatic intelligence</span>
-      </div>
-      <button class="theme-switch" id="themeToggle">Light / Dark</button>
-    </header>
+  <div class="e3b0c442-98fc-1c14-9e5b-8b9e3a5e4b2a">
+    <div class="a1b2c3d4-e5f6-4789-ab12-cd34ef56gh78">
+      <div class="p9o8i7u6-y5t4-r3e2-w1q2-a3s4d5f6g7h8">Palette Core</div>
+      <div class="z9x8c7v6-b5n4-m3k2-j1h2-g3f4d5s6a7w8">Color intelligence<br>for modern workflows</div>
+      <div class="q1w2e3r4-t5y6-u7i8-o9p0-a1s2d3f4g5h6">Harmony engine · WCAG contrast · Lock colors · Export CSS/SCSS/JSON</div>
+    </div>
 
-    <div class="control-bar glass-panel">
-      <div class="control-group">
-        <label>Base color</label>
-        <input type="color" id="baseColor" value="#3b82f6">
+    <div class="l1k2j3h4-g5f6-d7s8-a9z0-x1c2v3b4n5m6 f47ac10b-58cc-4372-a567-0e02b2c3d479">
+      <div class="b8v7c6x5-z4a3-s2d1-f3g4-h5j6k7l8z9x0">
+        <label class="m2n3b4v5-c6x7-z8a9-s1d2-f3g4h5j6k7l8">Base color</label>
+        <input type="color" id="baseColor" class="q9w8e7r6-t5y4-u3i2-o1p0-a2s3d4f5g6h7" value="#3b82f6">
       </div>
-      <div class="control-group">
-        <label>Harmony engine</label>
-        <select id="harmonySelect">
+      <div class="b8v7c6x5-z4a3-s2d1-f3g4-h5j6k7l8z9x0">
+        <label class="m2n3b4v5-c6x7-z8a9-s1d2-f3g4h5j6k7l8">Harmony mode</label>
+        <select id="harmonySelect" class="z1x2c3v4-b5n6-m7k8-j9h0-g1f2d3s4a5w6">
           <option value="complementary">Complementary</option>
           <option value="analogous">Analogous (6 tones)</option>
           <option value="triadic">Triadic expanded</option>
@@ -330,385 +384,597 @@
           <option value="split-complementary">Split complementary</option>
         </select>
       </div>
-      <button id="generateBtn">Generate palette</button>
-      <button id="randomBtn" class="btn-outline">Random seed</button>
-      <div class="export-group">
-        <button id="exportCssBtn" class="btn-outline">CSS vars</button>
-        <button id="exportScssBtn" class="btn-outline">SCSS map</button>
-        <button id="exportJsonBtn" class="btn-outline">JSON</button>
+      <button id="generateBtn" class="c5v6b7n8-m9k0-l1j2-h3g4-f5d6s7a8w9q0">Generate palette</button>
+      <button id="randomBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">Random seed</button>
+      <div class="a9s8d7f6-g5h4-j3k2-l1z2-x3c4v5b6n7m8">
+        <button id="exportCssBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">CSS vars</button>
+        <button id="exportScssBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">SCSS map</button>
+        <button id="exportJsonBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">JSON</button>
+        <button id="copyAllBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0">Copy all</button>
       </div>
     </div>
 
-    <div class="section-title">6‑color palette</div>
-    <div class="palette-grid" id="paletteGrid"></div>
+    <div id="gradientPreview" class="p0o9i8u7-y6t5-r4e3-w2q1-a2s3d4f5g6h7 f47ac10b-58cc-4372-a567-0e02b2c3d479"></div>
 
-    <div class="pairs-section glass-panel">
-      <div class="section-title" style="margin-bottom: 0.5rem;">Intelligent color pairs</div>
-      <div class="pairs-grid" id="pairsGrid"></div>
+    <div class="z3x4c5v6-b7n8-m9k0-l1j2-h3g4-f5d6s7a8">
+      <div class="q1w2e3r4-t5y6-u7i8-o9p0-a1s2d3f4g5h6">6‑color palette</div>
+      <span style="font-size:0.7rem;">click to copy · lock preserves color</span>
+    </div>
+    <div id="paletteGrid" class="l9k8j7h6-g5f4-d3s2-a1z2-x3c4v5b6n7m8"></div>
+
+    <div class="x9c8v7b6-n5m4-k3j2-h1g2-f3d4s5a6w7q8 f47ac10b-58cc-4372-a567-0e02b2c3d479">
+      <div class="z3x4c5v6-b7n8-m9k0-l1j2-h3g4-f5d6s7a8" style="margin-bottom: 0;">
+        <div class="q1w2e3r4-t5y6-u7i8-o9p0-a1s2d3f4g5h6">Intelligent color pairs</div>
+        <span style="font-size:0.7rem;">optimized contrast</span>
+      </div>
+      <div id="pairsGrid" class="z1x2c3v4-b5n6-m7k8-j9h0-g1f2d3s4a5w6"></div>
     </div>
 
-    <div class="section-title">History</div>
-    <div class="history-strip" id="historyContainer"></div>
-    <footer>professional color system · WCAG ready · root variables</footer>
+    <div class="z3x4c5v6-b7n8-m9k0-l1j2-h3g4-f5d6s7a8">
+      <div class="q1w2e3r4-t5y6-u7i8-o9p0-a1s2d3f4g5h6">History</div>
+      <button id="clearHistoryBtn" class="e5r6t7y8-u9i0-o1p2-a3s4-d5f6g7h8j9k0" style="background: rgba(231,76,60,0.6);">Clear history</button>
+    </div>
+    <div id="historyContainer" class="w3e4r5t6-y7u8-i9o0-p1a2-s3d4f5g6h7j8"></div>
+
+    <div class="u8i9o0p1-a2s3-d4f5-g6h7-j8k9l0z1x2c3">
+      <span>Color system · WCAG ready · zero dependencies · author: ramsny1-ops</span>
+    </div>
   </div>
 
   <script>
-    (function() {
-      let currentPalette = [];
-      let paletteHistory = [];
-      const MAX_HISTORY = 10;
+    /**
+     * @fileoverview Professional Color Palette Generator
+     * @author ramsny1-ops
+     * @version 2.0.0
+     * @description Advanced color harmony engine with lockable colors, history, and export capabilities.
+     */
 
-      function toast(message) {
-        const existing = document.querySelector('.toast');
-        if (existing) existing.remove();
-        const t = document.createElement('div');
-        t.className = 'toast';
-        t.innerText = message;
-        document.body.appendChild(t);
-        setTimeout(() => t.remove(), 2000);
+    /**
+     * @typedef {Object} RGB
+     * @property {number} r - Red channel 0-255
+     * @property {number} g - Green channel 0-255
+     * @property {number} b - Blue channel 0-255
+     */
+
+    /**
+     * @typedef {Object} HSL
+     * @property {number} h - Hue 0-360
+     * @property {number} s - Saturation 0-100
+     * @property {number} l - Lightness 0-100
+     */
+
+    /**
+     * @type {string[]} ___currentPalette - Array of 6 hex colors currently displayed
+     */
+    let ___currentPalette = [];
+
+    /**
+     * @type {string[]} ___paletteHistory - History of base colors used
+     */
+    let ___paletteHistory = [];
+
+    /**
+     * @type {boolean[]} ___lockedStates - Lock state for each of 6 palette positions
+     */
+    let ___lockedStates = [false, false, false, false, false, false];
+
+    /**
+     * @type {number} ___MAX_HISTORY - Maximum number of history items to store
+     */
+    const ___MAX_HISTORY = 12;
+
+    /**
+     * Displays a temporary toast notification
+     * @param {string} ___message - Text to display in toast
+     * @returns {void}
+     */
+    const ___showToast = (___message) => {
+      const ___existing = document.querySelector('.toast-global');
+      if (___existing) ___existing.remove();
+      const ___toast = document.createElement('div');
+      ___toast.className = 'toast-global';
+      ___toast.innerText = ___message;
+      document.body.appendChild(___toast);
+      setTimeout(() => ___toast.remove(), 2000);
+    };
+
+    /**
+     * Converts hex color to RGB object
+     * @param {string} ___hex - Hex color string (e.g., "#3b82f6")
+     * @returns {RGB} RGB object
+     */
+    const ___hexToRgb = (___hex) => {
+      const ___clean = ___hex.replace('#', '');
+      return {
+        r: parseInt(___clean.slice(0, 2), 16),
+        g: parseInt(___clean.slice(2, 4), 16),
+        b: parseInt(___clean.slice(4, 6), 16)
+      };
+    };
+
+    /**
+     * Converts RGB components to hex string
+     * @param {number} ___r - Red 0-255
+     * @param {number} ___g - Green 0-255
+     * @param {number} ___b - Blue 0-255
+     * @returns {string} Hex color string
+     */
+    const ___rgbToHex = (___r, ___g, ___b) => {
+      return '#' + ((1 << 24) + (___r << 16) + (___g << 8) + ___b).toString(16).slice(1);
+    };
+
+    /**
+     * Converts RGB to HSL
+     * @param {number} ___r - Red 0-255
+     * @param {number} ___g - Green 0-255
+     * @param {number} ___b - Blue 0-255
+     * @returns {HSL} HSL object
+     */
+    const ___rgbToHsl = (___r, ___g, ___b) => {
+      let ___rr = ___r / 255, ___gg = ___g / 255, ___bb = ___b / 255;
+      const ___max = Math.max(___rr, ___gg, ___bb), ___min = Math.min(___rr, ___gg, ___bb);
+      let ___h, ___s, ___l = (___max + ___min) / 2;
+      if (___max === ___min) {
+        ___h = ___s = 0;
+      } else {
+        const ___d = ___max - ___min;
+        ___s = ___l > 0.5 ? ___d / (2 - ___max - ___min) : ___d / (___max + ___min);
+        switch (___max) {
+          case ___rr: ___h = (___gg - ___bb) / ___d + (___gg < ___bb ? 6 : 0); break;
+          case ___gg: ___h = (___bb - ___rr) / ___d + 2; break;
+          case ___bb: ___h = (___rr - ___gg) / ___d + 4; break;
+        }
+        ___h /= 6;
       }
+      return {
+        h: Math.round(___h * 360),
+        s: Math.round(___s * 100),
+        l: Math.round(___l * 100)
+      };
+    };
 
-      // color utilities
-      function hexToRgb(hex) {
-        const h = hex.replace('#', '');
-        return {
-          r: parseInt(h.slice(0,2), 16),
-          g: parseInt(h.slice(2,4), 16),
-          b: parseInt(h.slice(4,6), 16)
+    /**
+     * Converts HSL to RGB
+     * @param {number} ___h - Hue 0-360
+     * @param {number} ___s - Saturation 0-100
+     * @param {number} ___l - Lightness 0-100
+     * @returns {RGB} RGB object
+     */
+    const ___hslToRgb = (___h, ___s, ___l) => {
+      ___h = ___h / 360;
+      ___s = ___s / 100;
+      ___l = ___l / 100;
+      let ___r, ___g, ___b;
+      if (___s === 0) {
+        ___r = ___g = ___b = ___l;
+      } else {
+        const ___hue2rgb = (___p, ___q, ___t) => {
+          if (___t < 0) ___t += 1;
+          if (___t > 1) ___t -= 1;
+          if (___t < 1 / 6) return ___p + (___q - ___p) * 6 * ___t;
+          if (___t < 1 / 2) return ___q;
+          if (___t < 2 / 3) return ___p + (___q - ___p) * (2 / 3 - ___t) * 6;
+          return ___p;
         };
+        const ___q = ___l < 0.5 ? ___l * (1 + ___s) : ___l + ___s - ___l * ___s;
+        const ___p = 2 * ___l - ___q;
+        ___r = ___hue2rgb(___p, ___q, ___h + 1 / 3);
+        ___g = ___hue2rgb(___p, ___q, ___h);
+        ___b = ___hue2rgb(___p, ___q, ___h - 1 / 3);
       }
+      return {
+        r: Math.round(___r * 255),
+        g: Math.round(___g * 255),
+        b: Math.round(___b * 255)
+      };
+    };
 
-      function rgbToHex(r,g,b) {
-        return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    /**
+     * Calculates relative luminance of a hex color (WCAG)
+     * @param {string} ___hex - Hex color
+     * @returns {number} Luminance value 0-1
+     */
+    const ___luminance = (___hex) => {
+      const { r, g, b } = ___hexToRgb(___hex);
+      const ___linear = (___c) => {
+        let ___v = ___c / 255;
+        return ___v <= 0.03928 ? ___v / 12.92 : Math.pow((___v + 0.055) / 1.055, 2.4);
+      };
+      return 0.2126 * ___linear(r) + 0.7152 * ___linear(g) + 0.0722 * ___linear(b);
+    };
+
+    /**
+     * Calculates contrast ratio between two colors
+     * @param {string} ___hex1 - First color
+     * @param {string} ___hex2 - Second color
+     * @returns {string} Contrast ratio as string with 2 decimals
+     */
+    const ___contrastRatio = (___hex1, ___hex2) => {
+      const ___l1 = ___luminance(___hex1);
+      const ___l2 = ___luminance(___hex2);
+      const ___light = Math.max(___l1, ___l2);
+      const ___dark = Math.min(___l1, ___l2);
+      return ((___light + 0.05) / (___dark + 0.05)).toFixed(2);
+    };
+
+    /**
+     * Returns WCAG grade based on contrast ratio
+     * @param {string} ___ratio - Contrast ratio
+     * @returns {string} 'AAA', 'AA', or 'Fail'
+     */
+    const ___wcagGrade = (___ratio) => {
+      const ___r = parseFloat(___ratio);
+      if (___r >= 7) return 'AAA';
+      if (___r >= 4.5) return 'AA';
+      return 'Fail';
+    };
+
+    /**
+     * Generates a friendly color name based on hue and lightness
+     * @param {string} ___hex - Hex color
+     * @returns {string} Color name
+     */
+    const ___colorName = (___hex) => {
+      const { h, l } = ___rgbToHsl(...Object.values(___hexToRgb(___hex)));
+      const ___map = [
+        [0, 20, 'Red'], [21, 45, 'Orange'], [46, 75, 'Amber'], [76, 165, 'Green'],
+        [166, 210, 'Cyan'], [211, 260, 'Azure'], [261, 310, 'Violet'], [311, 360, 'Magenta']
+      ];
+      let ___hueName = 'Neutral';
+      for (const [___low, ___high, ___name] of ___map) {
+        if (h >= ___low && h <= ___high) { ___hueName = ___name; break; }
       }
+      if (l < 18) return `Deep ${___hueName}`;
+      if (l > 82) return `Pale ${___hueName}`;
+      return ___hueName;
+    };
 
-      function rgbToHsl(r,g,b) {
-        r/=255; g/=255; b/=255;
-        const max = Math.max(r,g,b), min = Math.min(r,g,b);
-        let h,s,l = (max+min)/2;
-        if(max === min) h = s = 0;
-        else {
-          const d = max-min;
-          s = l > 0.5 ? d/(2-max-min) : d/(max+min);
-          switch(max) {
-            case r: h = (g-b)/d + (g<b ? 6:0); break;
-            case g: h = (b-r)/d + 2; break;
-            case b: h = (r-g)/d + 4; break;
-          }
-          h /= 6;
+    /**
+     * Generates 6 colors based on base hex and harmony mode
+     * @param {string} ___baseHex - Base color
+     * @param {string} ___mode - Harmony mode identifier
+     * @returns {string[]} Array of 6 hex colors
+     */
+    const ___generateSixColors = (___baseHex, ___mode) => {
+      const { h, s, l } = ___rgbToHsl(...Object.values(___hexToRgb(___baseHex)));
+      let ___colors = [];
+      if (___mode === 'complementary') {
+        const ___comp = (h + 180) % 360;
+        for (let ___i = 0; ___i < 6; ___i++) {
+          let ___hue = (h + ___i * 36) % 360;
+          if (___i === 1) ___hue = ___comp;
+          ___colors.push(___rgbToHex(...Object.values(___hslToRgb(___hue, s, l))));
         }
-        return { h: Math.round(h*360), s: Math.round(s*100), l: Math.round(l*100) };
-      }
-
-      function hslToRgb(h,s,l) {
-        h = h/360; s = s/100; l = l/100;
-        let r,g,b;
-        if(s === 0) r=g=b=l;
-        else {
-          const hue2rgb = (p,q,t) => {
-            if(t<0) t+=1;
-            if(t>1) t-=1;
-            if(t<1/6) return p+(q-p)*6*t;
-            if(t<1/2) return q;
-            if(t<2/3) return p+(q-p)*(2/3-t)*6;
-            return p;
-          };
-          const q = l < 0.5 ? l*(1+s) : l+s-l*s;
-          const p = 2*l - q;
-          r = hue2rgb(p,q,h+1/3);
-          g = hue2rgb(p,q,h);
-          b = hue2rgb(p,q,h-1/3);
+      } else if (___mode === 'analogous') {
+        const ___start = (h - 45 + 360) % 360;
+        for (let ___i = 0; ___i < 6; ___i++) {
+          const ___hue = (___start + ___i * 18) % 360;
+          ___colors.push(___rgbToHex(...Object.values(___hslToRgb(___hue, s, l))));
         }
-        return { r: Math.round(r*255), g: Math.round(g*255), b: Math.round(b*255) };
-      }
-
-      function luminance(hex) {
-        const {r,g,b} = hexToRgb(hex);
-        const linear = (c) => {
-          let v = c/255;
-          return v <= 0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4);
-        };
-        return 0.2126*linear(r) + 0.7152*linear(g) + 0.0722*linear(b);
-      }
-
-      function contrastRatio(hex1, hex2) {
-        const l1 = luminance(hex1);
-        const l2 = luminance(hex2);
-        const light = Math.max(l1,l2);
-        const dark = Math.min(l1,l2);
-        return ((light+0.05)/(dark+0.05)).toFixed(2);
-      }
-
-      function wcagGrade(ratio) {
-        const r = parseFloat(ratio);
-        if(r >= 7) return 'AAA';
-        if(r >= 4.5) return 'AA';
-        return 'Fail';
-      }
-
-      function colorName(hex) {
-        const {h,l} = rgbToHsl(...Object.values(hexToRgb(hex)));
-        const map = [
-          [0,20,'Red'],[21,45,'Orange'],[46,75,'Amber'],[76,165,'Green'],
-          [166,210,'Cyan'],[211,260,'Azure'],[261,310,'Violet'],[311,360,'Magenta']
-        ];
-        let hueName = 'Neutral';
-        for(let [low,high,name] of map) {
-          if(h >= low && h <= high) { hueName = name; break; }
+      } else if (___mode === 'triadic') {
+        const ___angles = [0, 120, 240];
+        for (let ___i = 0; ___i < 6; ___i++) {
+          let ___hue = (h + ___angles[___i % 3]) % 360;
+          let ___lightness = l + (Math.floor(___i / 3) === 0 ? 0 : (___i === 3 ? -12 : 12));
+          ___lightness = Math.min(88, Math.max(18, ___lightness));
+          ___colors.push(___rgbToHex(...Object.values(___hslToRgb(___hue, s, ___lightness))));
         }
-        if(l < 18) return `Deep ${hueName}`;
-        if(l > 82) return `Pale ${hueName}`;
-        return hueName;
-      }
-
-      // generates 6 colors based on harmony mode
-      function generateSixColors(baseHex, mode) {
-        const {h,s,l} = rgbToHsl(...Object.values(hexToRgb(baseHex)));
-        let colors = [];
-        if(mode === 'complementary') {
-          const comp = (h+180)%360;
-          for(let i=0;i<6;i++) {
-            let hue = (h + i*36) % 360;
-            if(i===1) hue = comp;
-            colors.push(rgbToHex(...Object.values(hslToRgb(hue,s,l))));
-          }
-        } else if(mode === 'analogous') {
-          const start = (h - 45 + 360) % 360;
-          for(let i=0;i<6;i++) {
-            const hue = (start + i*18) % 360;
-            colors.push(rgbToHex(...Object.values(hslToRgb(hue,s,l))));
-          }
-        } else if(mode === 'triadic') {
-          const angles = [0,120,240];
-          for(let i=0;i<6;i++) {
-            let hue = (h + angles[i%3]) % 360;
-            let lightness = l + (Math.floor(i/3)===0 ? 0 : (i===3? -12 : 12));
-            lightness = Math.min(88, Math.max(18, lightness));
-            colors.push(rgbToHex(...Object.values(hslToRgb(hue,s,lightness))));
-          }
-        } else if(mode === 'tetradic') {
-          const offsets = [0,90,180,270];
-          for(let i=0;i<6;i++) {
-            let hue = (h + offsets[i%4]) % 360;
-            let lit = l + (i>3 ? 10 : -5);
-            lit = Math.min(85, Math.max(20, lit));
-            colors.push(rgbToHex(...Object.values(hslToRgb(hue,s,lit))));
-          }
-        } else if(mode === 'monochromatic') {
-          for(let i=0;i<6;i++) {
-            let newL = Math.min(88, Math.max(14, l + (i-2.5)*12));
-            colors.push(rgbToHex(...Object.values(hslToRgb(h,s,newL))));
-          }
-        } else if(mode === 'split-complementary') {
-          const comp = (h+180)%360;
-          const left = (comp-30+360)%360;
-          const right = (comp+30)%360;
-          const baseHues = [h, left, right];
-          for(let i=0;i<6;i++) {
-            let hue = baseHues[i%3];
-            let lightness = l + (i>2 ? 14 : -4);
-            lightness = Math.min(85, Math.max(18, lightness));
-            colors.push(rgbToHex(...Object.values(hslToRgb(hue,s,lightness))));
-          }
-        } else {
-          for(let i=0;i<6;i++) colors.push(baseHex);
+      } else if (___mode === 'tetradic') {
+        const ___offsets = [0, 90, 180, 270];
+        for (let ___i = 0; ___i < 6; ___i++) {
+          let ___hue = (h + ___offsets[___i % 4]) % 360;
+          let ___lit = l + (___i > 3 ? 10 : -5);
+          ___lit = Math.min(85, Math.max(20, ___lit));
+          ___colors.push(___rgbToHex(...Object.values(___hslToRgb(___hue, s, ___lit))));
         }
-        return colors.slice(0,6);
+      } else if (___mode === 'monochromatic') {
+        for (let ___i = 0; ___i < 6; ___i++) {
+          let ___newL = Math.min(88, Math.max(14, l + (___i - 2.5) * 12));
+          ___colors.push(___rgbToHex(...Object.values(___hslToRgb(h, s, ___newL))));
+        }
+      } else if (___mode === 'split-complementary') {
+        const ___comp = (h + 180) % 360;
+        const ___left = (___comp - 30 + 360) % 360;
+        const ___right = (___comp + 30) % 360;
+        const ___baseHues = [h, ___left, ___right];
+        for (let ___i = 0; ___i < 6; ___i++) {
+          let ___hue = ___baseHues[___i % 3];
+          let ___lightness = l + (___i > 2 ? 14 : -4);
+          ___lightness = Math.min(85, Math.max(18, ___lightness));
+          ___colors.push(___rgbToHex(...Object.values(___hslToRgb(___hue, s, ___lightness))));
+        }
+      } else {
+        for (let ___i = 0; ___i < 6; ___i++) ___colors.push(___baseHex);
       }
+      return ___colors.slice(0, 6);
+    };
 
-      function createColorCard(hex) {
-        const isLight = luminance(hex) > 0.5;
-        const textColor = isLight ? '#111' : '#fff';
-        const ratioWhite = contrastRatio(hex, '#ffffff');
-        const ratioBlack = contrastRatio(hex, '#000000');
-        const bestRatio = parseFloat(ratioWhite) > parseFloat(ratioBlack) ? ratioWhite : ratioBlack;
-        const grade = wcagGrade(bestRatio);
-        let gradeClass = 'contrast-fail';
-        if(grade === 'AAA') gradeClass = 'contrast-aaa';
-        else if(grade === 'AA') gradeClass = 'contrast-aa';
-        
-        const card = document.createElement('div');
-        card.className = 'color-card';
-        card.style.backgroundColor = hex;
-        card.style.color = textColor;
-        card.innerHTML = `
-          <div class="color-hex">${hex.toUpperCase()}</div>
-          <div class="color-name">${colorName(hex)}</div>
-          <div class="contrast-badge ${gradeClass}">WCAG ${grade} ${bestRatio}:1</div>
+    /**
+     * Applies locked colors to a freshly generated palette
+     * @returns {string[]} Final palette respecting locks
+     */
+    const ___getFullPaletteWithLocks = () => {
+      const ___base = document.getElementById('baseColor').value;
+      const ___mode = document.getElementById('harmonySelect').value;
+      const ___fresh = ___generateSixColors(___base, ___mode);
+      const ___final = [...___fresh];
+      for (let ___i = 0; ___i < 6; ___i++) {
+        if (___lockedStates[___i] && ___currentPalette[___i]) ___final[___i] = ___currentPalette[___i];
+      }
+      return ___final;
+    };
+
+    /**
+     * Creates a DOM element for a color card with lock and contrast badge
+     * @param {string} ___hex - Hex color
+     * @param {number} ___index - Position in palette (0-5)
+     * @returns {HTMLElement} Color card div
+     */
+    const ___createColorCard = (___hex, ___index) => {
+      const ___isLight = ___luminance(___hex) > 0.5;
+      const ___textColor = ___isLight ? '#111' : '#fff';
+      const ___ratioWhite = ___contrastRatio(___hex, '#ffffff');
+      const ___ratioBlack = ___contrastRatio(___hex, '#000000');
+      const ___bestRatio = parseFloat(___ratioWhite) > parseFloat(___ratioBlack) ? ___ratioWhite : ___ratioBlack;
+      const ___grade = ___wcagGrade(___bestRatio);
+      let ___gradeClass = 'contrast-fail';
+      if (___grade === 'AAA') ___gradeClass = 'contrast-aaa';
+      else if (___grade === 'AA') ___gradeClass = 'contrast-aa';
+      
+      const ___card = document.createElement('div');
+      ___card.className = 'b2n3m4v5-c6x7-z8a9-s1d2-f3g4h5j6k7l8';
+      ___card.style.backgroundColor = ___hex;
+      ___card.style.color = ___textColor;
+      ___card.innerHTML = `
+        <div class="k9j8h7g6-f5d4-s3a2-z1x2-c3v4b5n6m7k8" data-idx="${___index}">${___lockedStates[___index] ? '🔒' : '🔓'}</div>
+        <div class="j4h5g6f7-d8s9-a0z1-x2c3-v4b5n6m7k8l9">${___hex.toUpperCase()}</div>
+        <div class="m9n8b7v6-c5x4-z3a2-s1d2-f3g4h5j6k7l8">${___colorName(___hex)}</div>
+        <div class="q2w3e4r5-t6y7-u8i9-o0p1-a2s3d4f5g6h7 ${___gradeClass}">WCAG ${___grade} ${___bestRatio}:1</div>
+      `;
+      const ___lockDiv = ___card.querySelector('.k9j8h7g6-f5d4-s3a2-z1x2-c3v4b5n6m7k8');
+      ___lockDiv.addEventListener('click', (___e) => {
+        ___e.stopPropagation();
+        ___lockedStates[___index] = !___lockedStates[___index];
+        ___generateFullPalette();
+      });
+      ___card.addEventListener('click', (___e) => {
+        if (___e.target === ___lockDiv || ___lockDiv.contains(___e.target)) return;
+        navigator.clipboard.writeText(___hex);
+        ___showToast(`Copied ${___hex}`);
+      });
+      return ___card;
+    };
+
+    /**
+     * Renders the main palette grid
+     * @param {string[]} ___colors - Array of 6 hex colors
+     * @returns {void}
+     */
+    const ___renderPalette = (___colors) => {
+      const ___grid = document.getElementById('paletteGrid');
+      ___grid.innerHTML = '';
+      ___colors.forEach((___c, ___idx) => ___grid.appendChild(___createColorCard(___c, ___idx)));
+      ___currentPalette = [...___colors];
+      ___updateGradientPreview(___colors);
+      ___updatePairsFromPalette();
+      ___addToHistory(___colors[0]);
+    };
+
+    /**
+     * Updates the gradient preview bar
+     * @param {string[]} ___colors - Array of hex colors
+     * @returns {void}
+     */
+    const ___updateGradientPreview = (___colors) => {
+      const ___gradDiv = document.getElementById('gradientPreview');
+      const ___gradientStr = `linear-gradient(90deg, ${___colors.join(', ')})`;
+      ___gradDiv.style.background = ___gradientStr;
+      ___gradDiv.onclick = () => {
+        navigator.clipboard.writeText(___colors.join(', '));
+        ___showToast('Gradient CSS copied');
+      };
+    };
+
+    /**
+     * Adds a color to history (deduplicated)
+     * @param {string} ___color - Hex color to add
+     * @returns {void}
+     */
+    const ___addToHistory = (___color) => {
+      if (!___paletteHistory.includes(___color)) {
+        ___paletteHistory.unshift(___color);
+        if (___paletteHistory.length > ___MAX_HISTORY) ___paletteHistory.pop();
+        ___renderHistory();
+      }
+    };
+
+    /**
+     * Renders the history strip
+     * @returns {void}
+     */
+    const ___renderHistory = () => {
+      const ___histDiv = document.getElementById('historyContainer');
+      ___histDiv.innerHTML = '';
+      ___paletteHistory.forEach(___hex => {
+        const ___chip = document.createElement('div');
+        ___chip.className = 'k9j8h7g6-f5d4-s3a2-z1x2-c3v4b5n6m7k8';
+        ___chip.style.backgroundColor = ___hex;
+        ___chip.addEventListener('click', () => {
+          document.getElementById('baseColor').value = ___hex;
+          ___generateFullPalette();
+        });
+        ___histDiv.appendChild(___chip);
+      });
+    };
+
+    /**
+     * Clears entire palette history
+     * @returns {void}
+     */
+    const ___clearHistory = () => {
+      ___paletteHistory = [];
+      ___renderHistory();
+      ___showToast('History cleared');
+    };
+
+    /**
+     * Generates intelligent color pairs from current palette
+     * @returns {void}
+     */
+    const ___updatePairsFromPalette = () => {
+      if (!___currentPalette.length) return;
+      const ___pairs = [];
+      for (let ___i = 0; ___i < 6; ___i++) {
+        let ___a = ___currentPalette[___i % ___currentPalette.length];
+        let ___b = ___currentPalette[(___i + 3) % ___currentPalette.length];
+        let ___ratio = parseFloat(___contrastRatio(___a, ___b));
+        if (___ratio < 3.2) {
+          const { h, s, l } = ___rgbToHsl(...Object.values(___hexToRgb(___a)));
+          const ___newHue = (h + 140) % 360;
+          ___b = ___rgbToHex(...Object.values(___hslToRgb(___newHue, Math.min(80, s + 12), 52)));
+        }
+        ___pairs.push({ c1: ___a, c2: ___b });
+      }
+      ___renderPairs(___pairs);
+    };
+
+    /**
+     * Renders the color pairs grid
+     * @param {Array<{c1:string, c2:string}>} ___pairs - Array of pair objects
+     * @returns {void}
+     */
+    const ___renderPairs = (___pairs) => {
+      const ___container = document.getElementById('pairsGrid');
+      ___container.innerHTML = '';
+      ___pairs.forEach(___pair => {
+        const ___div = document.createElement('div');
+        ___div.className = 'l2k3j4h5-g6f7-d8s9-a0z1-x2c3v4b5n6m7';
+        const ___txt1 = ___luminance(___pair.c1) > 0.5 ? '#111' : '#fff';
+        const ___txt2 = ___luminance(___pair.c2) > 0.5 ? '#111' : '#fff';
+        ___div.innerHTML = `
+          <div class="c8v7b6n5-m4k3-j2h1-g2f3-d4s5a6w7q8e9" style="background:${___pair.c1}; color:${___txt1}">${___pair.c1.toUpperCase()}</div>
+          <div class="c8v7b6n5-m4k3-j2h1-g2f3-d4s5a6w7q8e9" style="background:${___pair.c2}; color:${___txt2}">${___pair.c2.toUpperCase()}</div>
         `;
-        card.addEventListener('click', () => {
-          navigator.clipboard.writeText(hex);
-          toast(`Copied ${hex}`);
+        ___div.addEventListener('click', () => {
+          navigator.clipboard.writeText(`${___pair.c1} · ${___pair.c2}`);
+          ___showToast(`Pair copied`);
         });
-        return card;
-      }
+        ___container.appendChild(___div);
+      });
+    };
 
-      function renderPalette(colors) {
-        const grid = document.getElementById('paletteGrid');
-        grid.innerHTML = '';
-        colors.forEach(c => grid.appendChild(createColorCard(c)));
-        currentPalette = [...colors];
-        addToHistory(colors[0]);
-        updatePairsFromPalette(); // auto refresh pairs, no extra button
-      }
+    /**
+     * Main palette generation entry point
+     * @returns {void}
+     */
+    const ___generateFullPalette = () => {
+      const ___newColors = ___getFullPaletteWithLocks();
+      ___renderPalette(___newColors);
+    };
 
-      function addToHistory(color) {
-        if(!paletteHistory.includes(color)) {
-          paletteHistory.unshift(color);
-          if(paletteHistory.length > MAX_HISTORY) paletteHistory.pop();
-          renderHistory();
-        }
-      }
+    /**
+     * Generates a completely random palette
+     * @returns {void}
+     */
+    const ___randomPalette = () => {
+      const ___rand = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+      document.getElementById('baseColor').value = ___rand;
+      ___generateFullPalette();
+    };
 
-      function renderHistory() {
-        const histDiv = document.getElementById('historyContainer');
-        histDiv.innerHTML = '';
-        paletteHistory.forEach(hex => {
-          const chip = document.createElement('div');
-          chip.className = 'history-chip';
-          chip.style.backgroundColor = hex;
-          chip.addEventListener('click', () => {
-            document.getElementById('baseColor').value = hex;
-            generateFullPalette();
-          });
-          histDiv.appendChild(chip);
-        });
-      }
+    /**
+     * Copies all 6 hex colors to clipboard as comma-separated string
+     * @returns {void}
+     */
+    const ___copyAllHex = () => {
+      const ___text = ___currentPalette.join(', ');
+      navigator.clipboard.writeText(___text);
+      ___showToast('All 6 colors copied');
+    };
 
-      // automatically generate 6 pairs from current palette
-      function updatePairsFromPalette() {
-        if(!currentPalette.length) return;
-        const pairs = [];
-        for(let i=0;i<6;i++) {
-          let a = currentPalette[i % currentPalette.length];
-          let b = currentPalette[(i+3) % currentPalette.length];
-          let ratio = parseFloat(contrastRatio(a,b));
-          if(ratio < 3.2) {
-            const {h,s,l} = rgbToHsl(...Object.values(hexToRgb(a)));
-            const newHue = (h + 140) % 360;
-            b = rgbToHex(...Object.values(hslToRgb(newHue, Math.min(80, s+12), 52)));
-          }
-          pairs.push({c1:a, c2:b});
-        }
-        renderPairs(pairs);
-      }
+    /**
+     * Exports palette as CSS custom properties
+     * @returns {void}
+     */
+    const ___exportCSS = () => {
+      let ___css = ':root {\n';
+      ___currentPalette.forEach((___col, ___idx) => {
+        ___css += `  --color-${___idx + 1}: ${___col};\n`;
+      });
+      ___css += '}\n';
+      ___download(___css, 'palette_root.css', 'text/css');
+      ___showToast('CSS variables exported');
+    };
 
-      function renderPairs(pairs) {
-        const container = document.getElementById('pairsGrid');
-        container.innerHTML = '';
-        pairs.forEach(pair => {
-          const div = document.createElement('div');
-          div.className = 'pair-card';
-          const txt1 = luminance(pair.c1) > 0.5 ? '#111' : '#fff';
-          const txt2 = luminance(pair.c2) > 0.5 ? '#111' : '#fff';
-          div.innerHTML = `
-            <div class="pair-half" style="background:${pair.c1}; color:${txt1}">${pair.c1.toUpperCase()}</div>
-            <div class="pair-half" style="background:${pair.c2}; color:${txt2}">${pair.c2.toUpperCase()}</div>
-          `;
-          div.addEventListener('click', () => {
-            navigator.clipboard.writeText(`${pair.c1} · ${pair.c2}`);
-            toast(`Pair copied`);
-          });
-          container.appendChild(div);
-        });
-      }
+    /**
+     * Exports palette as SCSS map
+     * @returns {void}
+     */
+    const ___exportSCSS = () => {
+      let ___scss = '$palette: (\n';
+      ___currentPalette.forEach((___col, ___idx) => {
+        ___scss += `  'c${___idx + 1}': ${___col},\n`;
+      });
+      ___scss += ');\n';
+      ___download(___scss, '_palette.scss', 'text/scss');
+      ___showToast('SCSS map exported');
+    };
 
-      function generateFullPalette() {
-        const base = document.getElementById('baseColor').value;
-        const mode = document.getElementById('harmonySelect').value;
-        const six = generateSixColors(base, mode);
-        renderPalette(six);
-      }
+    /**
+     * Exports palette as JSON with metadata
+     * @returns {void}
+     */
+    const ___exportJSON = () => {
+      const ___data = {
+        palette: ___currentPalette,
+        harmony: document.getElementById('harmonySelect').value,
+        locked: ___lockedStates,
+        generated: new Date().toISOString()
+      };
+      ___download(JSON.stringify(___data, null, 2), 'palette_system.json', 'application/json');
+      ___showToast('JSON exported');
+    };
 
-      function randomPalette() {
-        const rand = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');
-        document.getElementById('baseColor').value = rand;
-        generateFullPalette();
-      }
+    /**
+     * Generic file download utility
+     * @param {string} ___content - File content
+     * @param {string} ___filename - Output filename
+     * @param {string} ___mime - MIME type
+     * @returns {void}
+     */
+    const ___download = (___content, ___filename, ___mime) => {
+      const ___blob = new Blob([___content], { type: ___mime });
+      const ___link = document.createElement('a');
+      ___link.href = URL.createObjectURL(___blob);
+      ___link.download = ___filename;
+      ___link.click();
+      URL.revokeObjectURL(___link.href);
+    };
 
-      // exports: CSS, SCSS, JSON (no PNG)
-      function exportCSS() {
-        let css = ':root {\n';
-        currentPalette.forEach((col, idx) => {
-          css += `  --color-${idx+1}: ${col};\n`;
-        });
-        css += '}\n';
-        download(css, 'palette_root.css', 'text/css');
-        toast('CSS variables exported');
-      }
+    /**
+     * Attaches all event listeners to UI controls
+     * @returns {void}
+     */
+    const ___bindEvents = () => {
+      document.getElementById('generateBtn').addEventListener('click', ___generateFullPalette);
+      document.getElementById('randomBtn').addEventListener('click', ___randomPalette);
+      document.getElementById('exportCssBtn').addEventListener('click', ___exportCSS);
+      document.getElementById('exportScssBtn').addEventListener('click', ___exportSCSS);
+      document.getElementById('exportJsonBtn').addEventListener('click', ___exportJSON);
+      document.getElementById('copyAllBtn').addEventListener('click', ___copyAllHex);
+      document.getElementById('clearHistoryBtn').addEventListener('click', ___clearHistory);
+    };
 
-      function exportSCSS() {
-        let scss = '$palette: (\n';
-        currentPalette.forEach((col, idx) => {
-          scss += `  'c${idx+1}': ${col},\n`;
-        });
-        scss += ');\n';
-        download(scss, '_palette.scss', 'text/scss');
-        toast('SCSS map exported');
-      }
+    /**
+     * Initializes the application
+     * @returns {void}
+     */
+    const ___init = () => {
+      ___bindEvents();
+      ___generateFullPalette();
+    };
 
-      function exportJSON() {
-        const data = {
-          palette: currentPalette,
-          harmony: document.getElementById('harmonySelect').value,
-          generated: new Date().toISOString()
-        };
-        download(JSON.stringify(data, null, 2), 'palette_system.json', 'application/json');
-        toast('JSON exported');
-      }
-
-      function download(content, filename, mime) {
-        const blob = new Blob([content], {type: mime});
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = filename;
-        link.click();
-        URL.revokeObjectURL(link.href);
-      }
-
-      // theme toggle (preserve glassmorphism, switch to light mode elegantly)
-      let isDark = true;
-      function toggleTheme() {
-        const body = document.body;
-        if(isDark) {
-          body.style.background = "radial-gradient(circle at 15% 25%, #f2f5fc, #e9eef5)";
-          body.style.color = "#0b1120";
-          document.querySelectorAll('.glass-panel').forEach(el => {
-            el.style.background = "rgba(245, 248, 252, 0.7)";
-            el.style.borderColor = "rgba(0,0,0,0.06)";
-          });
-          document.querySelectorAll('.color-card').forEach(c => {
-            c.style.background = "rgba(255,255,255,0.6)";
-          });
-        } else {
-          body.style.background = "radial-gradient(circle at 15% 25%, #0b0f1c, #03060b)";
-          body.style.color = "#edf2ff";
-          document.querySelectorAll('.glass-panel').forEach(el => {
-            el.style.background = "rgba(18, 24, 36, 0.58)";
-            el.style.borderColor = "rgba(255,255,255,0.08)";
-          });
-          document.querySelectorAll('.color-card').forEach(c => {
-            c.style.background = "rgba(0,0,0,0.25)";
-          });
-        }
-        isDark = !isDark;
-      }
-
-      function bindEvents() {
-        document.getElementById('generateBtn').addEventListener('click', generateFullPalette);
-        document.getElementById('randomBtn').addEventListener('click', randomPalette);
-        document.getElementById('exportCssBtn').addEventListener('click', exportCSS);
-        document.getElementById('exportScssBtn').addEventListener('click', exportSCSS);
-        document.getElementById('exportJsonBtn').addEventListener('click', exportJSON);
-        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-      }
-
-      function init() {
-        bindEvents();
-        generateFullPalette();
-      }
-      init();
-    })();
+    ___init();
   </script>
 </body>
-</html>
+                                                                                                                  </html>
